@@ -1,0 +1,206 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+*{
+    margin: 0px;
+    letter-spacing: 2px;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #070709;
+    color: rgba(216, 216, 216, 0.74);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ul {
+    list-style: none;
+}
+
+h1 {
+    color: white;
+}
+
+main {
+    /* border: solid 1px white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex: 1;
+}
+
+.profile-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    /* border: solid 1px rgb(241, 241, 241); */
+    gap: 20px;
+    padding: 20px;
+}
+
+.profile-sect img {
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.AboutMe{
+    /* border: solid 1px rgb(241, 20, 20); */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.AboutMe p{
+    width: 50%;
+}
+.prof-name-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.project-sect{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 10px;
+    /* border: solid 1px white; */
+}
+
+.project-sect ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-sect ul li div{
+    /* border: solid 1px white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.project-sect img {
+    height: 100px;
+    width: 100px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.uta-container img:hover {
+    transform: scale(1.1);  /* Enlarge by 10% */
+    filter: brightness(1.2);  /* Add slight white glow */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);  /* Add subtle white glow */
+}
+.tasklr-container img:hover {
+    transform: scale(1.1);  /* Enlarge by 10% */
+    filter: brightness(1.2);  /* Add slight white glow */
+}
+
+.extra-content {
+    display: none;
+}
+
+.read-more-btn {
+    color: #007bff;
+    cursor: pointer;
+    user-select: none;
+}
+
+.read-more-btn:hover {
+    text-decoration: underline;
+}
+
+/* First, let's style the base link */
+.AboutMe a {
+    color: white;  /* Keeps your existing white color */
+    text-decoration: none;
+    transition: all 0.3s ease;  /* Smooth transition for hover effect */
+}
+
+/* Add hover effects */
+.AboutMe a:hover {
+    color: #007bff;  /* Blue color on hover */
+    text-decoration: underline;
+}
+
+/* Link styles similar to AboutMe */
+.project-sect a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.project-sect a:hover {
+    color: #007bff;
+    text-decoration: underline;
+}
+
+/* Make container more interactive */
+.uta-container, .tasklr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.uta-container a , .tasklr-container a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.java-projects-container{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.java-projects-container img{
+    height: 40px;
+    width: 40px;
+}
+
+.snowflake {
+    position: fixed;
+    color: #fff;
+    font-size: 1em;
+    font-family: Arial, sans-serif;
+    text-shadow: 0 0 5px #fff;
+    pointer-events: none;
+    user-select: none;
+    z-index: 0;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translateY(-10vh);
+    }
+    100% {
+        transform: translateY(100vh);
+    }
+}
