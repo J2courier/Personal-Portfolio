@@ -82,7 +82,7 @@ main {
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding: 10px;
+    padding: 50px;
     /* border: solid 1px white; */
 }
 
@@ -343,4 +343,19 @@ nav {
 .playlist-container iframe:hover {
     transform: scale(1.02);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Add smooth scrolling to the whole document */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Add some padding to account for fixed header */
+section {
+    scroll-margin-top: 80px; /* Adjust this value based on your header height */
+}
+
+/* Optional: Add active state for nav links */
+.nav-right a:active {
+    color: #007bff;
 }
