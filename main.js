@@ -1,3 +1,5 @@
+
+
 function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
@@ -90,4 +92,5 @@ document.addEventListener('DOMContentLoaded', function() {
         const link = tasklrContainer.querySelector('a').href;
         window.open(link, '_blank', 'noopener noreferrer');
     });
+
 });

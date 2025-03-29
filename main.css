@@ -669,3 +669,63 @@ nav {
             "tech9";
     }
 }
+
+.song-notification {
+    position: fixed;
+    top: -100px; /* Start hidden above the viewport */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(25, 25, 25, 0.9);
+    padding: 12px 24px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: top 0.3s ease-in-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.song-notification.show {
+    top: 80px; /* Show below the navigation */
+}
+
+.notification-icon {
+    width: 24px;
+    height: 24px;
+    animation: pulse 2s infinite;
+}
+
+.song-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.now-playing {
+    font-size: 0.8rem;
+    color: #888;
+    margin: 0;
+}
+
+.song-name {
+    font-size: 1rem;
+    color: white;
+    margin: 0;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .song-notification {
+        width: 90%;
+        padding: 10px 16px;
+    }
+}
