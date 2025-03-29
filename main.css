@@ -277,6 +277,15 @@ nav {
 }
 .nav-left {
     margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left span {
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
 }
 .nav-left .nav-icon {
     width: 40px;
@@ -506,4 +515,90 @@ nav {
     height: 40px;
     width: 40px;
     margin-right: 10px;
+}
+
+.technologies-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.technologies-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "tech1 tech2 tech3"
+        "tech4 tech5 tech6"
+        "tech7 tech8 tech9"
+        "empty empty empty";
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+/* Assign grid areas to each tech div */
+.tech-1 { grid-area: tech1; }
+.tech-2 { grid-area: tech2; }
+.tech-3 { grid-area: tech3; }
+.tech-4 { grid-area: tech4; }
+.tech-5 { grid-area: tech5; }
+.tech-6 { grid-area: tech6; }
+.tech-7 { grid-area: tech7; }
+.tech-8 { grid-area: tech8; }
+.tech-9 { grid-area: tech9; }
+
+.technologies-container div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.technologies-container img {
+    width: 40px;
+    height: 40px;
+}
+
+.technologies-container h1 {
+    font-size: 1.1rem;
+}
+
+.technologies-container span {
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .technologies-container {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+            "tech1 tech2"
+            "tech3 tech4"
+            "tech5 tech6"
+            "tech7 tech8"
+            "tech9 empty";
+    }
+}
+
+@media (max-width: 480px) {
+    .technologies-container {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "tech1"
+            "tech2"
+            "tech3"
+            "tech4"
+            "tech5"
+            "tech6"
+            "tech7"
+            "tech8"
+            "tech9";
+    }
 }

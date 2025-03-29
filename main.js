@@ -24,9 +24,30 @@ function createSnowflake() {
     }, animationDuration * 1000);
 }
 
-
-
 document.addEventListener('DOMContentLoaded', function() {
+    // Lazy loading for images and iframes
+    const lazyElements = document.querySelectorAll('img[loading="lazy"], iframe[loading="lazy"]');
+    
+    const lazyLoadingObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const element = entry.target;
+                if (element.dataset.src) {
+                    element.src = element.dataset.src;
+                }
+                observer.unobserve(element);
+            }
+        });
+    }, {
+        root: null,
+        rootMargin: '50px',
+        threshold: 0.1
+    });
+
+    lazyElements.forEach(element => {
+        lazyLoadingObserver.observe(element);
+    });
+
     // Create a new snowflake every 200ms
     setInterval(createSnowflake, 200);
     
