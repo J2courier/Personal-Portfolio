@@ -28,7 +28,7 @@ function createSnowflake() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // Create a new snowflake every 200ms
-    // setInterval(createSnowflake, 200);
+    setInterval(createSnowflake, 200);
     
     const readMoreBtn = document.querySelector('.read-more-btn');
     const extraContent = document.querySelector('.extra-content');
