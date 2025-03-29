@@ -558,6 +558,73 @@ nav {
     padding: 15px;
     border-radius: 8px;
     transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+/* Hover effects for each technology */
+.tech-1:hover { /* Java */
+    background-color: rgba(231, 111, 0, 0.1);
+    border-color: #E76F00;
+    transform: translateY(-5px);
+}
+
+.tech-2:hover { /* JavaScript */
+    background-color: rgba(247, 223, 30, 0.1);
+    border-color: #F7DF1E;
+    transform: translateY(-5px);
+}
+
+.tech-3:hover { /* PHP */
+    background-color: rgba(119, 123, 179, 0.1);
+    border-color: #777BB3;
+    transform: translateY(-5px);
+}
+
+.tech-4:hover { /* MySQL */
+    background-color: rgba(68, 121, 161, 0.1);
+    border-color: #4479A1;
+    transform: translateY(-5px);
+}
+
+.tech-5:hover { /* Figma */
+    background-color: #11b9511e;
+    border-color: #11b952;
+    transform: translateY(-5px);
+}
+
+.tech-6:hover { /* Git */
+    background-color: rgba(240, 80, 50, 0.1);
+    border-color: #F05032;
+    transform: translateY(-5px);
+}
+
+.tech-7:hover { /* Github */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    transform: translateY(-5px);
+}
+
+.tech-8:hover { /* VSCode */
+    background-color: rgba(0, 122, 204, 0.1);
+    border-color: #007ACC;
+    transform: translateY(-5px);
+}
+
+.tech-9:hover { /* Vercel */
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #ffffff;
+    transform: translateY(-5px);
+}
+
+/* Hover effect for text */
+.technologies-container div:hover h1,
+.technologies-container div:hover span {
+    color: white;
+}
+
+/* Enhance image contrast on hover */
+.technologies-container div:hover img {
+    filter: brightness(1.2);
 }
 
 .technologies-container img {
