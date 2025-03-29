@@ -1,7 +1,7 @@
 function createSnowflake() {
     const snowflake = document.createElement('div');
     snowflake.classList.add('snowflake');
-    snowflake.textContent = '❄';
+    snowflake.textContent = "•";
     
     // Random starting position
     snowflake.style.left = Math.random() * 100 + 'vw';
@@ -24,10 +24,11 @@ function createSnowflake() {
     }, animationDuration * 1000);
 }
 
-// Start creating snowflakes when the page loads
+// Create a new snowflake every 200ms
+setInterval(createSnowflake, 200);
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Create a new snowflake every 200ms
-    setInterval(createSnowflake, 200);
+    
     
     const readMoreBtn = document.querySelector('.read-more-btn');
     const extraContent = document.querySelector('.extra-content');
