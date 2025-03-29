@@ -70,19 +70,45 @@ section {
     border-radius: 50%;
 }
 
-.AboutMe{
-    /* border: solid 1px rgb(241, 20, 20); */
+.AboutMe {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     gap: 10px;
+    width: 100%; /* Add this to ensure full width container */
+    padding: 0 20px; /* Add padding for smaller screens */
 }
 
-.AboutMe span{
-    width: 40%;
-    letter-spacing: 0.4px; /* Comfortable reading spacing */
+.AboutMe span {
+    width: 50%; /* Default width for larger screens */
+    letter-spacing: 0.4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .AboutMe span {
+        width: 100%; /* Slightly wider for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .AboutMe span {
+        width: 100%; /* Wider for tablet screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .AboutMe span {
+        width: 100%; /* Full width for mobile screens */
+        font-size: 0.95rem; /* Slightly smaller font for better readability */
+        line-height: 1.6; /* Better line height for readability */
+    }
+    
+    .AboutMe {
+        padding: 0 15px; /* Smaller padding for mobile */
+    }
 }
 .prof-name-container{
     display: flex;
