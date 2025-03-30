@@ -141,11 +141,13 @@ section {
 
 .project-sect ul li div{
     /* border: solid 1px white; */
-    box-shadow: 0 0 1px white;
     display: flex;
     flex-direction: column;
     padding: 20px;
     gap: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .project-sect img {
@@ -153,6 +155,53 @@ section {
     width: 100px;
     transition: all 0.3s ease;
     cursor: pointer;
+}
+
+.uta-container {
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.uta-container:hover {
+    background-color: rgba(255, 69, 0, 0.1); /* Orange tint */
+    border-color: #FF4500;
+    transform: translateY(-5px);
+}
+
+.tasklr-container {
+    background-color: transparent;
+    transition: all 0.3s ease;
+}
+
+.tasklr-container:hover {
+    background-color: rgba(65, 105, 225, 0.1); /* Royal blue tint */
+    border-color: #4169E1;
+    transform: translateY(-5px);
+}
+
+/* Enhance text and image effects on hover */
+.project-sect ul li div:hover h1,
+.project-sect ul li div:hover span,
+.project-sect ul li div:hover p {
+    color: white;
+}
+
+.project-sect ul li div:hover img {
+    filter: brightness(1.2);
+    /* Remove the existing transform since we're moving the whole container */
+    transform: none;
+}
+
+/* Update existing hover effects to prevent conflicts */
+.uta-container img:hover,
+.tasklr-container img:hover {
+    /* Remove the existing transform since we're moving the whole container */
+    transform: none;
+}
+
+/* Add box shadow effect on hover */
+.project-sect ul li div:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .uta-container img:hover {

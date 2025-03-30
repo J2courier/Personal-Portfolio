@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="game.css">
+    <title>Tetra-Structure</title>
+</head>
+<body>
+<header>
+    <nav>
+    </nav>
+</header>
+<main>
+    <section class="game-title-sect">
+        <h1>WELCOME TO MY GAME</h1>
+        <h1>Tetra-Structure</h1>
+    </section>
+    <section class="game-sect">
+        <div class="game-layout">
+            <div class="game-info">
+                <div class="preview-container">
+                    <h3>Next Block</h3>
+                    <div class="preview-box"></div>
+                </div>
+                <div class="points-display">
+                    <h3>Points: <span class="current-points">0</span></h3>
+                    <h3>Wins: <span class="win-counter">0</span></h3>
+                </div>
+                <div class="block-inventory">
+                    <h3>Block Inventory</h3>
+                    <div class="inventory-slots"></div>
+                </div>
+                <div class="active-effects">
+                    <h3>Active Effects</h3>
+                    <div class="effects-list"></div>
+                </div>
+                <div class="control-sect">
+                    <div class="slot-points-container">
+                        <h3>Slot Points: <span class="slot-points">0</span></h3>
+                    </div>
+                    <button class="slot-btn spin-btn">Spin</button>
+                    
+                    <div class="game-controls">
+                        <button class="game-btn attack-btn" disabled>Attack</button>
+                        <button class="game-btn rotate-btn" disabled>Rotate</button>
+                        <button class="game-btn stop-btn">Stop</button>
+                    </div>
+                </div>
+            </div>
+            <div class="game-main">
+                <div class="blocks-container"></div>
+                <div class="game-bottom-section">
+                    <div class="card-slot-container">
+                        <div class="slot-item slot-item-1"></div>
+                        <div class="slot-item slot-item-2"></div>
+                        <div class="slot-item slot-item-3"></div>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+</main>
+<footer>
+</footer>
+<script src="game.js"></script>    
+</body>
+</html>

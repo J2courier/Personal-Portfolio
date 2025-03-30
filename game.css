@@ -1,0 +1,359 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0px;
+    letter-spacing: 0.5px; /* Reduced from 2px to 0.5px */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #070709;
+    color: rgba(216, 216, 216, 0.74);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.5px;
+}
+
+.game-sect {
+    padding: 20px;
+    /* border: solid 1px white; */
+}
+
+.game-layout {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.game-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 250px;
+    /* border: solid 1px white; */
+}
+
+.game-main {
+    position: relative; /* Add this to contain the absolute positioned button */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /* border: solid 1px white; */
+}
+
+.blocks-container {
+    width: 300px;
+    height: 600px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    background-color: rgba(0, 0, 0, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.tetris-block-group {
+    position: absolute;
+    transition: all 0.3s ease;
+}
+
+.tetris-block {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+/* Tetris block colors with glow effects */
+.block-I {
+    background-color: #00f0f0;
+    box-shadow: 0 0 10px #00f0f0;
+}
+
+.block-O {
+    background-color: #f0f000;
+    box-shadow: 0 0 10px #f0f000;
+}
+
+.block-T {
+    background-color: #a000f0;
+    box-shadow: 0 0 10px #a000f0;
+}
+
+.block-S {
+    background-color: #00f000;
+    box-shadow: 0 0 10px #00f000;
+}
+
+.block-Z {
+    background-color: #f00000;
+    box-shadow: 0 0 10px #f00000;
+}
+
+.block-J {
+    background-color: #0000f0;
+    box-shadow: 0 0 10px #0000f0;
+}
+
+.block-L {
+    background-color: #f0a000;
+    box-shadow: 0 0 10px #f0a000;
+}
+
+.game-controls {
+    display: flex;
+    gap: 20px;
+}
+
+.game-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #333;
+    color: white;
+    text-transform: uppercase;
+}
+
+.game-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.game-title-sect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-size: 3.5rem;
+}
+
+.start-btn {
+    background-color: #00f000;
+}
+
+.stop-btn {
+    background-color: #f00000;
+    display: none;
+}
+
+.card-slot-container {
+    grid-area: slots;
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slot-item {
+    width: 80px;
+    height: 80px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.slot-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+}
+
+.slot-controls {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.slot-btn {
+    padding: 10px 30px;
+    font-size: 1.2em;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slot-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.slot-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+}
+
+.spin-btn {
+    grid-area: spin-btn;
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center; /* Center vertically in its grid area */
+}
+
+.spin-btn:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
+
+.spin-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.spinning {
+    animation: spin-animation 0.2s linear infinite;
+}
+
+@keyframes spin-animation {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.preview-container, 
+.points-display, 
+.block-inventory, 
+.active-effects {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.preview-box {
+    width: 120px;
+    height: 120px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 10px auto;
+    position: relative;
+}
+
+.inventory-slots {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.effects-list {
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.rotate-btn {
+    background-color: #0066cc;
+}
+
+.rotate-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.attack-btn {
+    background-color: #ff4081;
+    color: white;
+    /* padding: 10px 30px; */
+    font-size: 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.attack-btn:hover {
+    background-color: #f50057;
+    transform: scale(1.05);
+}
+
+.attack-btn:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+    transform: none;
+}
+.control-sect {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    /* border: solid 1px white; */
+}
+
+.slot-points-container {
+    text-align: center;
+}
+
+.slot-points {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #4CAF50;
+}
+
+.slot-popup {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    animation: popupAnimation 1s ease-out forwards;
+}
+
+.slot-popup.positive {
+    color: #4CAF50;
+}
+
+.slot-popup.negative {
+    color: #f44336;
+}
+
+@keyframes popupAnimation {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, 0);
+    }
+    20% {
+        opacity: 1;
+        transform: translate(-50%, -20px);
+    }
+    80% {
+        opacity: 1;
+        transform: translate(-50%, -20px);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -40px);
+    }
+}
