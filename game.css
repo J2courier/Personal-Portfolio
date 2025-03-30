@@ -15,7 +15,7 @@ html {
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #070709;
-    color: rgba(216, 216, 216, 0.74);
+    color: rgba(240, 240, 240, 0.644);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -356,4 +356,27 @@ body {
         opacity: 0;
         transform: translate(-50%, -40px);
     }
+}
+
+.rules {
+    /* text-align: center; */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 1px white; */
+    padding: 20px;
+    width: 100%;
+}
+
+.rules ul{
+    /* list-style: none; */
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.rules strong {
+    color: #ffffffa9;
 }

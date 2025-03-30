@@ -16,6 +16,36 @@
         <h1>WELCOME TO MY GAME</h1>
         <h1>Tetra-Structure</h1>
     </section>
+    <section class="rules">
+        <ul>
+            <h1>Game Rules</h1>
+            <li>Blocks are randomly placed</li>
+            <li>Dropping of blocks comes after spins and turns</li>
+            <li>Range points gives in-game effect</li>
+            <li>In game effect are sometimes buff with debuff, some are on cast and some are auto cast</li>
+            <li>Item Slots Includes: Angular, C++, Dart, ExpressJS, Flutter, GoLang, Haskell, Kotlin, Python</li>
+            <li>Item points from A-Z starting from 10-90</li>
+            <li>Pointing System: First Slot + Second Slot - Third Slot = Points</li>
+            <li>Points will determine the range points where the effect will be applied</li>
+            <li>there are 7 block shapes, O, T, S, Z, J, L</li>
+            <li> <strong> At range of 1-10 points</strong> - user can choose the next block that will be automatically stacked</li>
+            <li><strong>At range of 11-20 points </strong> - user can rotate the next block that will be automatically stacked</li>
+            <li><strong>At range of 21-30 points </strong> - user will obtain a reserve point, reserve point will prevent the next block to be automatically stacked and will be stored in block inventory, It can be used after the user spins the slot machine. Number of slot can increase if the user hits exactly 95 points 5 times (inconsecutively).</li>
+            <li><strong>At range of 31-40 points </strong> - 2 blocks will randomly explode or destroy, this won't allow the user to use the block-inventory in the next spin.</li>
+            <li><strong>At range of 41-50 points </strong> - user will have a chance to auto fit stacking on the next 3 spins ignoring other effects, except for jackpot which is greater than or equal to 100 points. </li>
+            <li><strong>At range of 51-60 points </strong> - user will be able to control the queued block to be stacked for only one turn. Effect will disappear after one spin.</li>
+            <li><strong>At range of 61-70 points </strong> - user will be given "O" shape for the next 3 turns, applying any acquired effect during the spins based
+                on the point ranges, the range it self 61-70 will be ignored. In case the user hit the jackpot this effect will be stopped.
+            </li>
+            <li><strong>At range of 71-80 points </strong>  - user will be able to discard the next block that will be automatically stacked</li>
+            <li><strong>At range of 81-90 points </strong> - all blocks with the same color will explode and destroy, this effect won't be use in the next spin in case the user hits this range point again, instead it will be converted into another spin and no block will be queued during that turn.</li>
+            <li><strong>At range of 91-99 points </strong> - user will be granted a chance to have sure hit-jackpot effect, but in the next 3 spins user must get a range points of 51-60, when 91-99 range point is on effect all other effect will be ignored.</li>
+            <li><strong>At range of 100 or greater </strong> - the jackpot, jackpot effect will clear all the blocks existing in the block container, and everything will reset including the stack inventory and effects condition of all range points. Will increment the win counter.</li>
+            <li> <strong>JACKPOT condition: hit the range point 91-99 and meet the condition, hit point range of 100 or greater, or hit 3 identical slots</strong> </li>
+
+
+        </ul>
+    </section>
     <section class="game-sect">
         <div class="game-layout">
             <div class="game-info">
@@ -58,8 +88,6 @@
                     </div>
                 </div>
             </div>
-            
-            
         </div>
     </section>
 </main>
