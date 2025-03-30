@@ -5,7 +5,7 @@ class TetrisGame {
         this.attackBtn = document.querySelector('.attack-btn');
         this.rotateBtn = document.querySelector('.rotate-btn');
         this.currentBlock = null;
-        this.queuedBlock = null;
+        this.queuedBlock = null;  // This will store the actual block type, not just preview
         this.blockSize = 30; // pixels
         this.containerWidth = 300;
         this.containerHeight = 600;
@@ -71,7 +71,8 @@ class TetrisGame {
     }
 
     createBlock() {
-        const blockType = this.getRandomBlockType();
+        // Use the queued block type instead of getting a random one
+        const blockType = this.queuedBlock;
         const shape = this.shapes[blockType];
         const blockGroup = document.createElement('div');
         blockGroup.className = 'tetris-block-group';
@@ -176,7 +177,7 @@ class TetrisGame {
     attackWithBlock() {
         if (!this.queuedBlock) return;
         
-        this.currentBlock = this.createBlock();
+        this.currentBlock = this.createBlock(); // This will now use the queued block
         this.attackBtn.disabled = true;
         
         // Move block down until collision
@@ -186,8 +187,10 @@ class TetrisGame {
             } else {
                 this.checkOverflow();
                 this.currentBlock = null;
-                this.queuedBlock = null;
-                this.updatePreview();
+                this.queuedBlock = null; // Clear the queued block
+                this.updatePreview(); // Update preview to show empty
+                // Enable spin button after block is placed
+                document.querySelector('.spin-btn').disabled = false;
             }
         };
         
@@ -398,10 +401,8 @@ class SlotMachine {
             }, index * 200); // 200ms delay between each popup
         });
 
-        // After spin completion
         this.isSpinning = false;
-        this.spinButton.disabled = false;
-
+        
         // Calculate points
         const points = this.tetrisGame.calculatePoints(this.slots);
         
@@ -410,10 +411,11 @@ class SlotMachine {
             this.tetrisGame.handleJackpot();
         }
 
-        // Always queue next block and enable attack
-        this.tetrisGame.queuedBlock = this.tetrisGame.getRandomBlockType();
-        this.tetrisGame.updatePreview();
+        // Queue next block and enable attack
+        this.tetrisGame.queueNextBlock(); // This will set up the next block properly
         this.tetrisGame.attackBtn.disabled = false;
+        
+        // Spin button remains disabled until block is dropped
     }
 
     async spinSlot(slot, duration) {
