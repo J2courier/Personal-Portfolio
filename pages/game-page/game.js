@@ -273,15 +273,15 @@ class TetrisGame {
 class SlotMachine {
     constructor(tetrisGame) {
         this.icons = [
-            'game icon/Angular-Dark.svg',
-            'game icon/CPP.svg',
-            'game icon/Dart-Dark.svg',
-            'game icon/ExpressJS-Dark.svg',
-            'game icon/Flutter-Dark.svg',
-            'game icon/GoLang.svg',
-            'game icon/Haskell-Dark.svg',
-            'game icon/Kotlin-Dark.svg',
-            'game icon/Python-Dark.svg'
+            './pages/game icon/Angular-Dark.svg',
+            './pages/game icon/CPP.svg',
+            './pages/game icon/Dart-Dark.svg',
+            './pages/game icon/ExpressJS-Dark.svg',
+            './pages/game icon/Flutter-Dark.svg',
+            './pages/game icon/GoLang.svg',
+            './pages/game icon/Haskell-Dark.svg',
+            './pages/game icon/Kotlin-Dark.svg',
+            './pages/game icon/Python-Dark.svg'
         ];
         
         // Define weights for each icon (lower number = higher probability)
@@ -322,7 +322,7 @@ class SlotMachine {
         for (const iconName in this.iconWeights) {
             random -= this.iconWeights[iconName];
             if (random <= 0) {
-                return 'game icon/' + iconName;
+                return '/pages/game icon/' + iconName;
             }
         }
         
