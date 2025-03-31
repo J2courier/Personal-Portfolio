@@ -20,6 +20,7 @@ body {
     display: flex;
     flex-direction: column;
     letter-spacing: 0.5px;
+    gap: 40px; /* Reduced from 50px for better balance */
 }
 
 
@@ -42,10 +43,10 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 60px; /* Adjusted for better section spacing */
     flex: 1;
-    padding: 20px;
-    margin-top: 80px;
+    padding: 30px 20px; /* Adjusted padding */
+    margin-top: 70px; /* Reduced from 80px */
 }
 
 
@@ -58,15 +59,14 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    padding: 30px; /* Increased padding */
     /* border: solid 1px rgb(241, 241, 241);    */
-    gap: 80px;
-    padding: 20px;
+    gap: 60px; /* Reduced from 80px */
 }
 
 .profile-sect img {
-    height: 300px;
-    width: 300px;
+    height: 280px; /* Slightly reduced */
+    width: 280px;
     border-radius: 50%;
 }
 
@@ -76,9 +76,9 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 10px;
+    gap: 15px; /* Adjusted from 10px */
     width: 100%; /* Add this to ensure full width container */
-    padding: 0 20px; /* Add padding for smaller screens */
+    padding: 0 30px; /* Increased padding */
 }
 
 .AboutMe span {
@@ -115,11 +115,12 @@ section {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
-    padding: 20px;
-    width: 700px;
+    padding: 25px; /* Increased padding */
+    width: 100%;
+    max-width: 800px; /* Added max-width */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 20px; /* Increased from 15px */
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
@@ -163,13 +164,18 @@ section {
     border-radius: 8px;
     padding: 25px;
     min-height: 200px;
+    width: 100%;
+   
 }
+
 
 .tab-content {
     display: none;
     opacity: 0;
     transform: translateY(10px);
     transition: all 0.3s ease;
+    width: 100%;
+    gap: 15px; /* Adjusted from 20px */
 }
 
 .tab-content.active {
@@ -178,23 +184,39 @@ section {
     gap: 20px;
     opacity: 1;
     transform: translateY(0);
+    height: 100%;
+}
+
+.tab-content span {
+    width: 100%;
 }
 
 .tab-content ul {
-    padding-left: 20px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced from 15px */
 }
 
 .tab-content ul li {
-    margin-bottom: 12px;
+    width: 100%;
+    padding: 15px 20px 15px 40px; /* Adjusted padding */
+    margin: 0;
     color: rgba(255, 255, 255, 0.8);
     position: relative;
-    padding-left: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
 }
 
 .tab-content ul li::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 15px;
     top: 50%;
     transform: translateY(-50%);
     width: 6px;
@@ -203,24 +225,24 @@ section {
     border-radius: 50%;
 }
 
+.tab-content ul li:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
-    .skills-ed-bg {
-        width: 100%;
-        max-width: 700px;
-        padding: 15px;
-    }
-    
-    .switch-pane-container {
-        flex-direction: column;
-    }
-
-    .tab-btn {
-        padding: 10px 15px;
-    }
-
     .pane-contents {
         padding: 20px;
+    }
+
+    .tab-content ul li {
+        padding: 10px 12px 10px 30px;
+    }
+
+    .tab-content ul li::before {
+        left: 12px;
     }
 }
 
@@ -256,110 +278,127 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    padding: 20px;
+    gap: 40px; /* Reduced from 50px */
+    padding: 30px 20px; /* Adjusted padding */
     width: 100%;
-    /* Remove fixed padding to be more responsive */
 }
 
 .project-sect ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    gap: 25px; /* Adjusted from 30px */
+    flex-wrap: wrap;
     width: 100%;
-    padding: 0 15px;
+    padding: 0 20px; /* Adjusted padding */
 }
 
 .project-sect ul li {
     flex: 1;
-    min-width: 200px; /* Minimum width for each project card */
-    max-width: 300px; /* Maximum width for each project card */
+    min-width: 250px;
+    max-width: 300px;
 }
 
-.project-sect ul li div {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    gap: 10px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent;
-}
-
-/* Adjust image sizes to be consistent */
-.project-sect img {
-    height: 100px;
-    width: 100px;
-    object-fit: cover; /* Ensure images maintain aspect ratio */
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-/* Specific container styles */
+/* Standardized container styles for all project items */
 .uta-container,
 .tasklr-container,
 .tetris-container {
-    background-color: transparent;
-    transition: all 0.3s ease;
     width: 100%;
-    text-align: center;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Increased from 15px */
+    padding: 30px; /* Increased from 25px */
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Standardized image styles */
+.project-sect img {
+    width: 110px; /* Slightly reduced */
+    height: 110px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+/* Standardized link styles */
+.project-sect a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+/* Hover effects */
+.uta-container:hover,
+.tasklr-container:hover,
+.tetris-container:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.project-sect img:hover {
+    transform: scale(1.05);
+}
+
+.project-sect a:hover {
+    color: #007bff;
+}
+
+/* Project header container */
+.java-projects-container {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increased from 15px */
+    padding: 20px 30px; /* Adjusted padding */
+    border-radius: 12px;
+}
+
+.java-projects-container img {
+    width: 40px;
+    height: 40px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .project-sect ul {
-        gap: 15px;
+        gap: 20px;
     }
 
     .project-sect ul li {
-        min-width: 150px; /* Slightly smaller on tablets */
+        min-width: 220px;
+    }
+
+    .project-sect img {
+        width: 100px;
+        height: 100px;
     }
 }
 
 @media (max-width: 480px) {
     .project-sect {
-        padding: 10px;
+        padding: 15px;
     }
 
     .project-sect ul {
-        flex-direction: column; /* Stack projects vertically on mobile */
-        gap: 20px;
+        flex-direction: column;
+        align-items: stretch;
     }
 
     .project-sect ul li {
         width: 100%;
         max-width: none;
     }
-
-    .project-sect img {
-        height: 80px; /* Slightly smaller images on mobile */
-        width: 80px;
-    }
-}
-
-/* Ensure consistent hover effects */
-.uta-container:hover,
-.tasklr-container:hover,
-.tetris-container:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Project title styles */
-.java-projects-container {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.java-projects-container img {
-    height: 40px;
-    width: 40px;
 }
 .extra-content {
     display: none;
@@ -467,7 +506,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
+    padding: 0.8rem 1.5rem; /* Slightly reduced */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -502,7 +541,7 @@ nav {
 
 .nav-right ul {
     display: flex;
-    gap: 2rem;
+    gap: 1.8rem; /* Adjusted from 2rem */
     list-style: none;
     margin: 0;
     padding: 0;
@@ -527,11 +566,11 @@ nav {
 .music-sect {
     width: 100%;
     max-width: 1200px;
-    padding: 20px;
+    padding: 30px 20px; /* Adjusted padding */
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px; /* Reduced from 50px */
 }
 
 .playlist-container {
@@ -540,7 +579,7 @@ nav {
     grid-template-areas: 
         "playlist1 playlist2"
         "playlist3 playlist4";
-    gap: 20px;
+    gap: 25px; /* Adjusted from 20px */
     width: 100%;
 }
 
