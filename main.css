@@ -110,6 +110,135 @@ section {
         padding: 0 15px; /* Smaller padding for mobile */
     }
 }
+
+.skills-ed-bg {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    padding: 20px;
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+}
+
+.switch-pane-container {
+    display: flex;
+    gap: 10px;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.tab-btn {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px 20px;
+    border-radius: 6px;
+    color: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+}
+
+.tab-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.tab-btn.active {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.pane-contents {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 25px;
+    min-height: 200px;
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.tab-content.active {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tab-content ul {
+    padding-left: 20px;
+}
+
+.tab-content ul li {
+    margin-bottom: 12px;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    padding-left: 20px;
+}
+
+.tab-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .skills-ed-bg {
+        width: 100%;
+        max-width: 700px;
+        padding: 15px;
+    }
+    
+    .switch-pane-container {
+        flex-direction: column;
+    }
+
+    .tab-btn {
+        padding: 10px 15px;
+    }
+
+    .pane-contents {
+        padding: 20px;
+    }
+}
+
+/* Add subtle animation for tab switching */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content.active {
+    animation: fadeIn 0.3s ease forwards;
+}
 .prof-name-container{
     display: flex;
     flex-direction: column;
@@ -122,27 +251,38 @@ section {
     height: 20px;
     width: 20px;
 }
-.project-sect{
+.project-sect {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 50px;
-    padding: 50px;
-    /* border: solid 1px white; */
+    padding: 20px;
+    width: 100%;
+    /* Remove fixed padding to be more responsive */
 }
 
-.project-sect ul{
+.project-sect ul {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    width: 100%;
+    padding: 0 15px;
 }
 
-.project-sect ul li div{
-    /* border: solid 1px white; */
+.project-sect ul li {
+    flex: 1;
+    min-width: 200px; /* Minimum width for each project card */
+    max-width: 300px; /* Maximum width for each project card */
+}
+
+.project-sect ul li div {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     padding: 20px;
     gap: 10px;
     border-radius: 8px;
@@ -150,88 +290,76 @@ section {
     border: 1px solid transparent;
 }
 
+/* Adjust image sizes to be consistent */
 .project-sect img {
     height: 100px;
     width: 100px;
+    object-fit: cover; /* Ensure images maintain aspect ratio */
     transition: all 0.3s ease;
     cursor: pointer;
 }
 
-.uta-container {
-    background-color: transparent;
-    transition: all 0.3s ease;
-}
-
-.uta-container:hover {
-    background-color: rgba(255, 69, 0, 0.1); /* Orange tint */
-    border-color: #FF4500;
-    transform: translateY(-5px);
-}
-
-.tasklr-container {
-    background-color: transparent;
-    transition: all 0.3s ease;
-}
-
-.tasklr-container:hover {
-    background-color: rgba(65, 105, 225, 0.1); /* Royal blue tint */
-    border-color: #4169E1;
-    transform: translateY(-5px);
-}
-
+/* Specific container styles */
+.uta-container,
+.tasklr-container,
 .tetris-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: center;
 }
 
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .project-sect ul {
+        gap: 15px;
+    }
+
+    .project-sect ul li {
+        min-width: 150px; /* Slightly smaller on tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-sect {
+        padding: 10px;
+    }
+
+    .project-sect ul {
+        flex-direction: column; /* Stack projects vertically on mobile */
+        gap: 20px;
+    }
+
+    .project-sect ul li {
+        width: 100%;
+        max-width: none;
+    }
+
+    .project-sect img {
+        height: 80px; /* Slightly smaller images on mobile */
+        width: 80px;
+    }
+}
+
+/* Ensure consistent hover effects */
+.uta-container:hover,
+.tasklr-container:hover,
 .tetris-container:hover {
-    background-color: #cecb1723; /* Royal blue tint */
-    border-color: #cecb17;
     transform: translateY(-5px);
-}
-
-/* Enhance text and image effects on hover */
-.project-sect ul li div:hover h1,
-.project-sect ul li div:hover span,
-.project-sect ul li div:hover p {
-    color: white;
-}
-
-.project-sect ul li div:hover img {
-    filter: brightness(1.2);
-    /* Remove the existing transform since we're moving the whole container */
-    transform: none;
-}
-
-/* Update existing hover effects to prevent conflicts */
-.uta-container img:hover,
-.tasklr-container img:hover {
-    /* Remove the existing transform since we're moving the whole container */
-    transform: none;
-}
-
-/* Add box shadow effect on hover */
-.project-sect ul li div:hover {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.uta-container img:hover {
-    transform: scale(1.1);  
-    filter: brightness(1.2);  
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);  
-  
-}
-.tasklr-container img:hover {
-    transform: scale(1.1); 
-    filter: brightness(1.2);  
+/* Project title styles */
+.java-projects-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.tetris-container img:hover {
-    transform: scale(1.1); 
-    filter: brightness(1.2);  
+.java-projects-container img {
+    height: 40px;
+    width: 40px;
 }
 .extra-content {
     display: none;
@@ -354,7 +482,9 @@ nav {
     color: white;
     font-size: 1.1rem;
     letter-spacing: 0.3px;
+    cursor: pointer;
 }
+
 .nav-left .nav-icon {
     width: 40px;
     height: 40px;

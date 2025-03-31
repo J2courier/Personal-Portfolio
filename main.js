@@ -94,3 +94,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+// Tab switching functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => 
+                content.classList.remove('active')
+            );
+            
+            // Add active class to clicked button
+            button.classList.add('active');
+            
+            // Show corresponding content
+            const tabName = button.getAttribute('data-tab');
+            document.querySelector(`.${tabName}-content`).classList.add('active');
+        });
+    });
+});
