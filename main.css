@@ -78,7 +78,7 @@ section {
     justify-content: center;
     text-align: center;
     gap: 15px; 
-    width: 120%;
+    width: 100%;
     padding: 0 30px; 
     /* background-color: red; */
 }
@@ -99,6 +99,11 @@ section {
     .AboutMe span {
         width: 100%; /* Wider for tablet screens */
     }
+    .AboutMe {
+        padding: 0 15px; /* Smaller padding for mobile */
+        width: 120%;
+        /* border: solid 1px white; */
+    }
 }
 
 @media (max-width: 480px) {
@@ -110,6 +115,8 @@ section {
     
     .AboutMe {
         padding: 0 15px; /* Smaller padding for mobile */
+        width: 120%;
+        /* border: solid 1px white; */
     }
 }
 

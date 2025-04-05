@@ -1,10 +1,50 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Page</title>
+    <link rel="stylesheet" href="study.css">
+    <title>Profile</title>
 </head>
 <body>
-    
+    <!-- HEADER SECTION -->
+<header>
+    <nav>
+        <div class="nav-left">
+           
+            <span>Study Mode</span>
+        </div>
+        <div class="nav-right">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="#profile"><p>Flashcard</p></a></li>
+                <li><a href="#projects"><p>Quizzer</p></a></li>
+                <li><a href="#music"><p>Statistics</p></a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- MAIN SECTION -->
+<main>
+    <div class="flashcard-container">
+        <div class="flashcard-sets-container">
+            <form action="">
+                <input type="text" name="subject"><br>
+                <input type="text" name="description">
+            </form>
+        </div>
+        <div class="flashcard-cards-container">
+            <input type="text" name="terms"><br>
+            <input type="text" name="definition">
+            <button>Add More Cards</button>    
+        </div>
+        <button>Create Flashcard</button>
+    </div>
+</main>
+<!-- FOOTER SECTION -->
+<footer>
+
+</footer>
+<script src="study.js"></script>    
 </body>
 </html>

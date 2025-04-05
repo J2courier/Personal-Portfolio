@@ -1,0 +1,112 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+* {
+    margin: 0px;
+    letter-spacing: 0.5px; /* Reduced from 2px to 0.5px */
+}
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #070709;
+    color: rgba(216, 216, 216, 0.74);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0.5px;
+    gap: 40px; /* Reduced from 50px for better balance */
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+ul {
+    list-style: none;
+}
+
+h1 {
+    color: white;
+    letter-spacing: 0.7px; 
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1.5rem; /* Slightly reduced */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nav-left {
+    margin-right: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-left span {
+    color: white;
+    font-size: 1.1rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+}
+
+.nav-left .nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    /* border: solid 1px white; */
+    object-fit: cover;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.nav-left .nav-icon:hover {
+    transform: scale(1.1);
+}
+
+.nav-right ul {
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-right ul li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-right a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.96rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Remove any default paragraph margins */
+.nav-right a p {
+    margin: 0;
+    padding: 0;
+}
+
+.nav-right a:hover {
+    color: #007bff;
+    text-decoration: none;
+}

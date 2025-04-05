@@ -50,34 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lazyLoadingObserver.observe(element);
     });
 
-    // Create a new snowflake every 200ms
-    setInterval(createSnowflake, 200);
-    
-    const readMoreBtn = document.querySelector('.read-more-btn');
-    const extraContent = document.querySelector('.extra-content');
+    setInterval(createSnowflake, 200);//creatn=ing a snow effects on the back ground
 
-    readMoreBtn.addEventListener('click', function() {
-        if (extraContent.style.display === 'none' || extraContent.style.display === '') {
-            extraContent.style.display = 'inline';
-            readMoreBtn.style.display = 'none';  // Hide the "See More..." button
-            
-            // Check if "Show Less" button already exists
-            if (!extraContent.querySelector('.read-more-btn')) {
-                extraContent.innerHTML += ' <span class="read-more-btn">Show Less</span>';  // Add "Show Less" at the end
-                
-                // Add click event to the new "Show Less" button
-                const newBtn = extraContent.querySelector('.read-more-btn');
-                newBtn.addEventListener('click', function() {
-                    extraContent.style.display = 'none';
-                    readMoreBtn.style.display = 'inline';  // Show original "See More..." button
-                    readMoreBtn.textContent = 'See More...';
-                });
-            }
-        } else {
-            extraContent.style.display = 'none';
-            readMoreBtn.textContent = 'See More...';
-        }
-    });
 
     // Project image click handlers...
     const utaContainer = document.querySelector('.uta-container');
@@ -93,26 +67,40 @@ document.addEventListener('DOMContentLoaded', function() {
         window.open(link, '_blank', 'noopener noreferrer');
     });
 
-});
+    // Hamburger menu functionality
+    const hamburger = document.querySelector('.hamburger');
+    const navRight = document.querySelector('.nav-right');
 
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navRight.classList.toggle('active');
+    });
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Close mobile menu when clicking a link
+    document.querySelectorAll('.nav-right a').forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            navRight.classList.remove('active');
+        });
+    });
+
+    // Switch pane container functionality
     const tabButtons = document.querySelectorAll('.tab-btn');
-    
+    const tabContents = document.querySelectorAll('.tab-content');
+
     tabButtons.forEach(button => {
         button.addEventListener('click', () => {
             // Remove active class from all buttons and contents
             tabButtons.forEach(btn => btn.classList.remove('active'));
-            document.querySelectorAll('.tab-content').forEach(content => 
-                content.classList.remove('active')
-            );
-            
+            tabContents.forEach(content => content.classList.remove('active'));
+
             // Add active class to clicked button
             button.classList.add('active');
-            
+
             // Show corresponding content
-            const tabName = button.getAttribute('data-tab');
-            document.querySelector(`.${tabName}-content`).classList.add('active');
+            const tabId = button.getAttribute('data-tab');
+            const content = document.querySelector(`.${tabId}-content`);
+            content.classList.add('active');
         });
     });
 });
