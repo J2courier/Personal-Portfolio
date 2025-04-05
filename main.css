@@ -60,7 +60,8 @@ section {
     align-items: center;
     justify-content: center;
     padding: 30px; /* Increased padding */
-    /* border: solid 1px rgb(241, 241, 241);    */
+    border: solid 1px rgb(241, 241, 241);   
+    width: 100%;
     gap: 60px; /* Reduced from 80px */
 }
 
@@ -76,9 +77,10 @@ section {
     align-items: center;
     justify-content: center;
     text-align: center;
-    gap: 15px; /* Adjusted from 10px */
-    width: 100%; /* Add this to ensure full width container */
-    padding: 0 30px; /* Increased padding */
+    gap: 15px; 
+    width: 120%;
+    padding: 0 30px; 
+    /* background-color: red; */
 }
 
 .AboutMe span {
@@ -575,10 +577,16 @@ nav {
 
 .nav-right ul {
     display: flex;
-    gap: 1.8rem; /* Adjusted from 2rem */
+    gap: 1rem;
     list-style: none;
     margin: 0;
     padding: 0;
+    align-items: center;
+}
+
+.nav-right ul li {
+    display: flex;
+    align-items: center;
 }
 
 .nav-right a {
@@ -588,7 +596,16 @@ nav {
     transition: color 0.3s ease;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    letter-spacing: 0.3px; /* Slightly tighter for navigation */
+    letter-spacing: 0.3px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Remove any default paragraph margins */
+.nav-right a p {
+    margin: 0;
+    padding: 0;
 }
 
 .nav-right a:hover {
