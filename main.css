@@ -60,7 +60,7 @@ section {
     align-items: center;
     justify-content: center;
     padding: 30px; /* Increased padding */
-    border: solid 1px rgb(241, 241, 241);   
+    /* border: solid 1px rgb(241, 241, 241);    */
     width: 100%;
     gap: 60px; /* Reduced from 80px */
 }
