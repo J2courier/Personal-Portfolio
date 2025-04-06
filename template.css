@@ -1,0 +1,42 @@
+.templates-sect {
+    /* border: solid 1px white; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+.templates-sect h1 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+.templates-sect img {
+    height: 60%;
+    width: 60%;
+    border-radius: 10px;
+    /* filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2)); */
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+.templates-sect img:hover {
+    filter: drop-shadow(0 0 25px rgba(175, 152, 255, 0.3));
+    transform: scale(1.05) translateY(-5px);
+}
+.templates-sect a {
+    text-decoration: none;
+}
+.templates-sect button {
+    padding: 10px 20px;
+    width: 200px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #333;
+    color: white;
+}
+.templates-sect button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
