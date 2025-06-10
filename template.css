@@ -19,7 +19,7 @@
     cursor: pointer;
 }
 .templates-sect img:hover {
-    filter: drop-shadow(0 0 25px rgba(175, 152, 255, 0.3));
+    filter: drop-shadow(0 0 12px rgba(175, 152, 255, 0.3));
     transform: scale(1.05) translateY(-5px);
 }
 .templates-sect a {

@@ -1,3 +1,135 @@
+:root {
+  /* Base colors */
+  --background: 240 11% 4%;  /* Your dark background #070709 */
+  --foreground: 0 0% 84%;    /* Your text color rgba(216, 216, 216, 0.74) */
+
+  /* Card and container colors */
+  --card: 0 0% 100% 0.03;    /* Your container background rgba(255, 255, 255, 0.03) */
+  --card-foreground: 0 0% 100% 0.9;  /* Your card text color */
+  
+  /* Primary colors */
+  --primary: 211 100% 50%;   /* #007bff - your link hover color */
+  --primary-foreground: 0 0% 100%;
+  
+  /* Secondary colors */
+  --secondary: 0 0% 20%;     /* Your button background #333 */
+  --secondary-foreground: 0 0% 100%;
+  
+  /* Muted colors */
+  --muted: 0 0% 100% 0.03;   /* Subtle backgrounds */
+  --muted-foreground: 215 16% 47%;
+  
+  /* Accent colors */
+  --accent: 0 0% 100% 0.1;   /* Your hover state backgrounds */
+  --accent-foreground: 0 0% 100%;
+  
+  /* Border colors */
+  --border: 0 0% 100% 0.1;   /* Your border color rgba(255, 255, 255, 0.1) */
+  --input: 0 0% 100% 0.1;
+  --ring: 0 0% 100% 0.1;
+  
+  /* Destructive colors */
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 210 40% 98%;
+
+  /* Border radius */
+  --radius: 0.75rem;
+}
+
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 0.5px;
+  gap: 40px;
+}
+
+/* Header and navigation */
+header {
+  background-color: hsla(var(--background), 0.95);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 2px 10px hsla(var(--background), 0.3);
+}
+
+h2 {
+    color: white;
+}
+/* Links */
+a {
+  text-decoration: none;
+  color: hsl(var(--primary-foreground));
+}
+
+a:hover {
+  color: hsl(var(--primary));
+}
+
+/* Project containers */
+.uta-container,
+.tasklr-container,
+.tetris-container {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+}
+
+.uta-container:hover,
+.tasklr-container:hover,
+.tetris-container:hover {
+  background-color: hsl(var(--accent));
+  border-color: hsl(var(--border));
+  box-shadow: 0 8px 24px hsla(var(--background), 0.2);
+}
+
+/* Technology cards hover effects */
+.tech-1:hover {
+  background-color: hsla(27, 100%, 45%, 0.1);
+  border-color: #E76F00;
+}
+
+.tech-2:hover {
+  background-color: hsla(53, 93%, 54%, 0.1);
+  border-color: #F7DF1E;
+}
+
+/* Buttons */
+.templates-sect button {
+  background-color: hsl(var(--secondary));
+  color: hsl(var(--secondary-foreground));
+  border-radius: var(--radius);
+  transition: all 0.3s ease;
+}
+
+.templates-sect button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px hsla(var(--primary), 0.3);
+}
+
+/* Card styles */
+.card {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  color: hsl(var(--card-foreground));
+}
+
+/* Input fields */
+input, textarea {
+  background-color: hsl(var(--input));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+  color: hsl(var(--foreground));
+}
+
+/* Focus states */
+*:focus-visible {
+  outline: 2px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
 *,
 *::before,
 *::after {
@@ -66,9 +198,15 @@ section {
 }
 
 .profile-sect img {
-    height: 280px; /* Slightly reduced */
-    width: 280px;
-    border-radius: 50%;
+    height: 250px; /* Slightly reduced */
+    width: 250px;
+    border-radius: 5px;
+    filter: drop-shadow(0 0 5px rgb(78, 78, 78));
+    /* object-fit: contain; */
+}
+
+.profile-sect img:hover {
+    cursor: pointer;
 }
 
 .AboutMe {
@@ -121,7 +259,7 @@ section {
 }
 
 .skills-ed-bg {
-    background: rgba(255, 255, 255, 0.03);
+    background: rgba(255, 254, 254, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 6px;
     padding: 25px; /* Increased padding */
@@ -134,49 +272,113 @@ section {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
 }
 
+/* Switch pane container styles */
 .switch-pane-container {
     display: flex;
     gap: 10px;
     padding: 4px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 8px;
+    background-color: hsl(var(--secondary) / 0.2);
+    border-radius: calc(var(--radius) + 2px);
+    border: 1px solid hsl(var(--border));
 }
 
+/* Tab button styles */
 .tab-btn {
-    background: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: transparent;
+    border: none;
     padding: 12px 20px;
-    border-radius: 6px;
-    color: rgba(255, 255, 255, 0.7);
+    border-radius: var(--radius);
+    color: hsl(var(--muted-foreground));
     cursor: pointer;
     width: 100%;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
+    font-weight: 500;
 }
 
+/* Hover state */
 .tab-btn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: white;
+    background-color: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
 }
 
+/* Active state */
 .tab-btn.active {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    color: black;
+    box-shadow: 0 1px 2px hsl(var(--background) / 0.3);
 }
 
+/* Pane contents */
 .pane-contents {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
+    background-color: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
     padding: 25px;
     min-height: 200px;
     width: 100%;
-   
 }
 
+/* Animation for tab switching */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.tab-content.active {
+    animation: fadeIn 0.2s ease forwards;
+}
+
+/* Tab content list styles */
+.tab-content ul li {
+    position: relative;
+    padding: 12px 16px 12px 32px;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    margin-bottom: 8px;
+    transition: all 0.2s ease;
+    background-color: hsl(var(--card));
+}
+
+.tab-content ul li::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    background-color: hsl(var(--primary));
+    border-radius: 50%;
+}
+
+.tab-content ul li:hover {
+    background-color: hsl(var(--accent));
+    border-color: hsl(var(--border));
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .pane-contents {
+        padding: 20px;
+    }
+
+    .tab-content ul li {
+        padding: 10px 12px 10px 30px;
+    }
+
+    .tab-content ul li::before {
+        left: 12px;
+    }
+}
 
 .tab-content {
     display: none;
@@ -255,7 +457,7 @@ section {
     }
 }
 
-/* Add subtle animation for tab switching */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -270,6 +472,7 @@ section {
 .tab-content.active {
     animation: fadeIn 0.3s ease forwards;
 }
+
 .prof-name-container {
     display: flex;
     align-items: center;
@@ -288,7 +491,8 @@ section {
     width: 20px;
 }
 
-/* Media queries for responsive design */
+
+
 @media (max-width: 768px) {
     .prof-name-container {
         flex-direction: column;
@@ -316,6 +520,17 @@ section {
         width: 16px;
     }
 }
+
+.j1-img-container {
+    border: solid 1px white;
+}   
+
+.j1 {
+    /* border-radius: 50%; */
+    /* object-fit: contain; */
+}
+
+
 .project-sect {
     display: flex;
     flex-direction: column;
@@ -1022,6 +1237,39 @@ nav {
     .song-notification {
         width: 90%;
         padding: 10px 16px;
+    }
+}
+
+.button {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+}
+
+.card {
+  background-color: hsl(var(--card));
+  border: 1px solid hsl(var(--border));
+  border-radius: var(--radius);
+}
+
+/* Section header styling */
+.section-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    margin-bottom: 0;
+    white-space: nowrap;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .section-header {
+        gap: 0.75rem;
     }
 }
 
