@@ -194,13 +194,13 @@ section {
     padding: 30px; /* Increased padding */
     /* border: solid 1px rgb(241, 241, 241);    */
     width: 100%;
-    gap: 60px; /* Reduced from 80px */
+    gap: 60px; /* 2Reduced from 80px */
 }
 
 .profile-sect img {
     height: 250px; /* Slightly reduced */
     width: 250px;
-    border-radius: 5px;
+    border-radius: 15px;
     filter: drop-shadow(0 0 5px rgb(78, 78, 78));
     /* object-fit: contain; */
 }

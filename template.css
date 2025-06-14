@@ -1,5 +1,4 @@
 .templates-sect {
-    /* border: solid 1px white; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -14,7 +13,6 @@
     height: 60%;
     width: 60%;
     border-radius: 10px;
-    /* filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.2)); */
     transition: all 0.5s ease;
     cursor: pointer;
 }
